@@ -20,9 +20,28 @@
         }
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px 60px 20px; /* Adjusted padding for image */
             border-bottom: 1px solid #393E46;
         }
+        
+        /* NEW: Style for your circular profile image */
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* This makes the image a circle */
+            border: 6px solid #FFD369; /* This adds the yellow frame */
+            object-fit: cover; /* This prevents the image from distorting */
+            margin-bottom: 20px;
+        }
+
+        /* NEW: Style for the "Hi there! I am" text */
+        .intro-text {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #FFD369;
+            margin-bottom: -5px; /* Pulls the main headline closer */
+        }
+        
         h1, h2, h3 {
             color: #FFD369;
             font-family: "Poppins", sans-serif;
@@ -33,6 +52,7 @@
         }
         h1 {
             font-size: 3em;
+            margin-top: 10px; /* Adjusted margin for the new text above */
             margin-bottom: 0.2em;
         }
         header p {
@@ -93,7 +113,8 @@
             margin: 10px;
             font-weight: 500;
         }
-        img {
+        /* Adjusted the general img rule to not interfere with the profile image */
+        section img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
@@ -111,6 +132,12 @@
 
     <div class="container">
         <header>
+            <!-- ADDED: Your circular profile image -->
+            <img src="background-hero-image.jpg" alt="Profile Picture of Nabel Tantao" class="profile-image">
+            
+            <!-- ADDED: The "Hi there! I am" text -->
+            <p class="intro-text">Hi there! I am</p>
+
             <h1>A Digital Marketing Strategist</h1>
             <p>Targeted Ad Campaigns | WordPress & Elementor Solutions | SEO & Content Strategy | Social Media Management</p>
             <div class="button-container">

@@ -1,241 +1,1180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="For the last 3 years, Nabel M. Tantao has mastered On-page & Technical SEO. He's also been exploring and creating smart n8n workflows.">
-    <title>Nabel M. Tantao | On-page & Technical SEO and n8n Automation</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #222831;
-            color: #EEEEEE;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 20px 40px;
-        }
-        header {
-            text-align: center;
-            padding: 40px 20px 60px 20px; /* Adjusted padding for image */
-            border-bottom: 1px solid #393E46;
-        }
-        
-        /* NEW: Style for your circular profile image */
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%; /* This makes the image a circle */
-            border: 6px solid #FFD369; /* This adds the yellow frame */
-            object-fit: cover; /* This prevents the image from distorting */
-            margin-bottom: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Technical / Automation</title>
 
-        /* NEW: Style for the "Hi there! I am" text */
-        .intro-text {
-            font-size: 1.6em;
-            font-weight: bold;
-            color: #FFD369;
-            margin-bottom: -5px; /* Pulls the main headline closer */
-        }
-        
-        h1, h2, h3 {
-            color: #FFD369;
-            font-family: "Poppins", sans-serif;
-        }
-        .project h3 {
-            font-size: 1.8em;
-            margin-bottom: 5px;
-        }
-        h1 {
-            font-size: 3em;
-            margin-top: 10px; /* Adjusted margin for the new text above */
-            margin-bottom: 0.2em;
-        }
-        header p {
-            font-size: 1.1em;
-            color: #EEEEEE;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        section {
-            padding: 40px 40px;
-            margin-bottom: 20px;
-            background-color: #393E46;
-            border-radius: 8px;
-        }
-        #recent-work {
-            padding-top: 15px;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-        .stat h3 {
-            font-size: 2.2em;
-            margin: 0;
-        }
-        .project {
-            margin-bottom: 60px;
-        }
-        .project ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .testimonial {
-            border-left: 4px solid #FFD369;
-            padding-left: 20px;
-            margin-bottom: 50px;
-            font-style: italic;
-        }
-        .testimonial-author {
-            font-weight: bold;
-            font-style: normal;
-            margin-top: 10px;
-            display: block;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        a.button {
-            display: inline-block;
-            background-color: #1A1A1A;
-            color: #FFFFFF;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 20px;
-            margin: 10px;
-            font-weight: 500;
-        }
-        /* Adjusted the general img rule to not interfere with the profile image */
-        section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9em;
-            color: #aaa;
-        }
-    </style>
+  <!-- Google Fonts: Manrope for UI, JetBrains Mono for technical accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       1. RESET & THEME VARIABLES
+       ============================================================ */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* --- Core palette: black + orange "technical" theme --- */
+      --bg:            #0a0a0b;
+      --bg-alt:        #111114;
+      --card:          #14141a;
+      --card-hover:    #1a1a22;
+      --border:        #23232c;
+      --border-strong: #2e2e3a;
+      --text:          #f4f4f6;
+      --text-muted:    #8a8a96;
+
+      /* --- Accent: vibrant orange with glow --- */
+      --accent:        #ff6a00;
+      --accent-hi:     #ff8a33;
+      --accent-lo:     #cc4f00;
+      --accent-glow:   rgba(255, 106, 0, 0.35);
+      --accent-soft:   rgba(255, 106, 0, 0.08);
+
+      --font-sans: 'Manrope', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Faint grid pattern across the whole page — "dashboard" vibe */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { font-family: inherit; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section { padding: 110px 0; position: relative; z-index: 1; }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-eyebrow::before { content: "// "; opacity: 0.6; }
+
+    .section-title {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 60px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ============================================================
+       2. NAVIGATION
+       ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 14px 0;
+      transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+    /* Toggled by JS when user scrolls */
+    .nav.scrolled {
+      background: rgba(10, 10, 11, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom-color: var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-muted);
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    /* Underline slides in on hover */
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-icon {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-icon:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* --- Buttons --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0a0b;
+      box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hi);
+      box-shadow: 0 0 24px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border-strong);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ============================================================
+       3. HERO
+       ============================================================ */
+    .hero {
+      padding: 160px 0 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ambient orange glow behind the hero */
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Terminal-style status pill above the headline */
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding: 6px 12px;
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      background: var(--card);
+    }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.4; }
+    }
+
+    .hero-title {
+      font-size: 56px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .hero-title .accent { color: var(--accent); display: block; }
+
+    /* Rotating "> I am a ___" line under the headline */
+    .hero-rotator {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-top: 18px;
+      height: 28px;           /* lock height so layout doesn't jump */
+    }
+    .hero-rotator .prompt { color: var(--accent); }
+    .hero-rotator .typed  { color: var(--text); }
+    /* Blinking cursor */
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      background: var(--accent);
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 50%  { opacity: 1; }
+      51%,100% { opacity: 0; }
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 28px 0;
+    }
+    .tag {
+      padding: 6px 12px;
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+    .tag::before { content: "# "; color: var(--accent); }
+
+    .hero-desc {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 520px;
+      font-size: 15px;
+    }
+    .hero-actions { display: flex; gap: 12px; }
+
+    /* --- Right column: portrait + floating tools --- */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 380px;
+    }
+    .portrait {
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #8b4513 60%, #1a1a22 100%);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 80px var(--accent-glow);
+      position: relative;
+      /* Drop your image in: background-image: url('...'); background-size: cover; */
+    }
+    /* Slowly spinning dashed ring around the portrait */
+    .portrait::before {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      border: 1px dashed var(--accent);
+      opacity: 0.4;
+      animation: spin 20s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .floating-icons {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .floating-icon {
+      width: 52px; height: 52px;
+      border-radius: 10px;
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--text);
+      animation: float 3s ease-in-out infinite;
+    }
+    .floating-icon:nth-child(2) { animation-delay: 0.4s; }
+    .floating-icon:nth-child(3) { animation-delay: 0.8s; }
+    .floating-icon:nth-child(4) { animation-delay: 1.2s; }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-8px); }
+    }
+
+    /* ============================================================
+       4. STATS BAND (animated counters)
+       ============================================================ */
+    .stats {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 50px 0;
+      background: var(--bg-alt);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .stat-num::after { content: "+"; }
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       5. SERVICES
+       ============================================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s;
+    }
+    /* Orange accent bar that reveals on hover */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      background: var(--card-hover);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .service-card:hover::before { transform: scaleY(1); }
+
+    .service-icon {
+      width: 42px; height: 42px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 18px;
+    }
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .service-card p { color: var(--text-muted); font-size: 14px; }
+
+    /* ============================================================
+       6. FEATURED WORK
+       ============================================================ */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      padding: 8px 18px;
+      background: transparent;
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      transition: all 0.2s;
+    }
+    .filter-tab:hover { color: var(--text); border-color: var(--accent); }
+    .filter-tab.active {
+      background: var(--accent);
+      color: #0a0a0b;
+      border-color: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .work-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px -10px var(--accent-glow);
+    }
+    /* JS toggles this when filtered out */
+    .work-card.is-hidden { display: none; }
+
+    .work-thumb {
+      height: 220px;
+      background: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 13px;
+      font-family: var(--font-mono);
+    }
+    .work-body { padding: 22px; }
+    .work-body h3 { font-size: 17px; margin-bottom: 6px; }
+    .work-body p  { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; }
+
+    .work-meta {
+      display: flex;
+      gap: 18px;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 16px;
+      font-family: var(--font-mono);
+    }
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .work-tag {
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+    }
+
+    /* ============================================================
+       7. SKILLS & TOOLS
+       ============================================================ */
+    .skills-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-bottom: 24px;
+    }
+    .skill-col h3 {
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 18px;
+      font-family: var(--font-mono);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .skill-col ul li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 7px 0;
+      position: relative;
+      padding-left: 18px;
+      transition: color 0.2s;
+    }
+    .skill-col ul li::before {
+      content: ">";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+    .skill-col ul li:hover { color: var(--text); }
+
+    .tools-platforms {
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 32px;
+      text-align: center;
+    }
+    .tools-platforms h4 {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-family: var(--font-mono);
+    }
+    .tools-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .tool-icon {
+      width: 54px; height: 54px;
+      border-radius: 10px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .tool-icon:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* ============================================================
+       8. TESTIMONIALS
+       ============================================================ */
+    .testimonial-row {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 14px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) var(--card);
+    }
+    .testimonial-row::-webkit-scrollbar { height: 6px; }
+    .testimonial-row::-webkit-scrollbar-track { background: var(--card); }
+    .testimonial-row::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+    .testimonial-card {
+      flex: 0 0 340px;
+      background: var(--card);
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 26px;
+      transition: border-color 0.2s;
+    }
+    .testimonial-card:hover { border-color: var(--accent); }
+
+    .quote-mark {
+      color: var(--accent);
+      font-size: 28px;
+      font-family: var(--font-mono);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .testimonial-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+    .testimonial-author { font-size: 14px; font-weight: 600; }
+    .testimonial-author small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 2px;
+      font-weight: 400;
+      font-family: var(--font-mono);
+    }
+
+    /* ============================================================
+       9. BOOKING
+       ============================================================ */
+    .booking-embed {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      min-height: 500px;
+      color: #333;
+      text-align: center;
+      box-shadow: 0 0 60px rgba(255, 106, 0, 0.15);
+    }
+
+    /* ============================================================
+       10. FOOTER
+       ============================================================ */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      background: var(--bg-alt);
+      position: relative;
+      z-index: 1;
+    }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+    .footer-right { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-right span:hover { color: var(--accent); cursor: pointer; }
+
+    /* ============================================================
+       11. REVEAL-ON-SCROLL (driven by JS IntersectionObserver)
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       12. RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-title { font-size: 38px; }
+      .hero-inner,
+      .services-grid,
+      .work-grid,
+      .skills-wrapper { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 70px 0; }
+      .hero { padding: 130px 0 80px; }
+      .portrait { width: 260px; height: 260px; }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <header>
-            <!-- ADDED: Your circular profile image -->
-            <img src="https://github.com/Engrnabs/Engrnabs.github.io/blob/main/My%20Digital%20Profile.png?raw=true" alt="Profile" class="profile-image">
-            
-            <!-- ADDED: The "Hi! Interested in knowing me? I simply am" text -->
-            <p class="intro-text">Hi! Interested in knowing me? I simply am</p>
+  <!-- ============================================================
+       NAV
+       ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="logo">Lors<span>.Tech</span></div>
 
-            <h1>An On-page & Technical SEO and n8n Automation Specialist</h1>
-            <p>Technical Audits & Fixes | On-page SEO factors Implementation | n8n Workflows | HTML, CSS, JavaScript</p>
-            <div class="button-container">
-                <a href="https://drive.google.com/file/d/1xUjxW8T4LtGNR9t2BFTI1LqQc90wUbEd/view" class="button" target="_blank"> Download Resume</a>
-                <a href="https://docs.google.com/presentation/d/1-HuTSAOh8AHCnrxK4Ud46w5jPnEXf1JV/edit?usp=drive_link&ouid=117743721070927326964&rtpof=true&sd=true" class="button">Check My Portfolio </a>
-            </div>
-        </header>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-        <section class="stats">
-            <div class="stats-grid">
-                <div class="stat">
-                    <h3>4,160+</h3>
-                    <p>Hours of Experience</p>
-                </div>
-                <div class="stat">
-                    <h3>25+</h3>
-                    <p>Projects Delivered</p>
-                </div>
-                <div class="stat">
-                    <h3>11</h3>
-                    <p>Satisfied Clients</p>
-                </div>
-                <div class="stat">
-                    <h3>50+</h3>
-                    <p>Tools Mastered</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="recent-work">
-            <h2 style="text-align: center; font-size: 2.5em;">My Recent Works</h2>
-            
-            <div class="project">
-                <h3>Driving Organic Traffic with SEO Content Strategy</h3>
-                <p>Developed and executed content strategies for UK-based local SEO clients in the fire and security sector, producing weekly, SEO-optimized blog posts to increase organic visibility and engage target audiences.</p>
-                <h4>Project Highlights:</h4>
-                <ul>
-                    <li>SEO Keyword Research</li>
-                    <li>On-Page SEO Optimization</li>
-                    <li>Long-Form Blog Writing</li>
-                    <li>Content Calendar Management</li>
-                </ul>
-            </div>
-            
-            <div class="project">
-                <h3>On-Page SEO & Website Enhancement for Slide Savvy Repairs</h3>
-                <p>Improved online presence and search performance for US-based SlideSavvyRepairs through on-page SEO, internal linking, and website improvements, leading to better indexation, user journey, and brand engagement.</p>
-                <h4>Project Highlights:</h4>
-                <ul>
-                    <li>Website Development</li>
-                    <li>Responsive Design</li>
-                    <li>On-page Optimization</li>
-                    <li>Link-Building</li>
-                </ul>
-            </div>
-
-            <div class="project">
-                <h3>Multi-Site Content & SEO Strategy for a Swiss Digital Publisher</h3>
-                <p>Improved and managed the SEO and content strategy for a Switzerland-based client's projects. PDF-File was the main project where I focused on comprehensive content optimization and quality assurance for their web tools.</p>
-                <h4>Project Highlights:</h4>
-                <ul>
-                    <li>Multi-Site Content Strategy</li>
-                    <li>Technical SEO & On-Page Optimization</li>
-                    <li>High-Authority Link Building</li>
-                    <li>Quality Assurance (QA) & User Feedback</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="testimonials">
-            <h2 style="text-align: center; font-size: 2.5em;">What My Clients Say</h2>
-            <div class="testimonial">
-                <p>"Nabel is the kind of professional every team needs. He's detail-oriented, highly effective, and always completes his work on time. He was an extremely useful and reliable part of our operations from day one. Our advice is simple: hire him. You'll be glad you did."</p>
-                <span class="testimonial-author">— Aaron Umba, Founder & Managing Director, Eruptible Marketing</span>
-            </div>
-            <div class="testimonial">
-                <p>"Out of the 6 virtual assistants we hired, Nabel was the top performer. He was very professional, has great attention to detail, and completed his assignments on time and with high quality. I highly recommend Nabel for additional virtual assistance jobs."</p>
-                <span class="testimonial-author">— Anthony Ragland, Marketing & Strategy Consultant</span>
-            </div>
-             <div class="testimonial">
-                <p>"Nabel is a critical thinker, and is very intelligent, detail-oriented, and quick. He is a very fast learner and we’re sure he would excel at any task, given decent directions. He went above and beyond to make sure we were satisfied."</p>
-                <span class="testimonial-author">— Michael Trainor, Content Specialist</span>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2 style="text-align: center; font-size: 2.5em;">Let's Build Something Great Together.</h2>
-            <p style="text-align: center;">Whether you need a new website, a powerful SEO strategy, or engaging content to grow your audience, I'm ready to help. Let's connect and discuss how I can achieve your goals.</p>
-            <div class="button-container">
-                 <a href="https://www.linkedin.com/in/engrnabs/" class="button">Contact Me!</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 Nabel Tantao. All rights reserved.</p>
-        </footer>
+      <div class="nav-right">
+        <span class="nav-icon">IG</span>
+        <span class="nav-icon">☀</span>
+        <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+      </div>
     </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text reveal">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span>Available for new projects</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hello, I'm
+          <span class="accent">Lorraine Pastor.</span>
+        </h1>
+
+        <!-- JS types rotating roles into .typed -->
+        <div class="hero-rotator">
+          <span class="prompt">&gt;</span>
+          <span class="typed" id="typed"></span><span class="cursor">&nbsp;</span>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag">Technical VA</span>
+          <span class="tag">AI Automation</span>
+          <span class="tag">Bookkeeping</span>
+        </div>
+
+        <p class="hero-desc">
+          Operations-driven Technical VA helping businesses stay organized,
+          streamline workflows, and automate repetitive tasks.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Let's Work Together →</a>
+          <a href="#services" class="btn btn-outline">View Services</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="portrait"></div>
+        <div class="floating-icons">
+          <div class="floating-icon">n8n</div>
+          <div class="floating-icon">MAKE</div>
+          <div class="floating-icon">API</div>
+          <div class="floating-icon">AI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS BAND
+       ============================================================ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="reveal">
+          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-num" data-target="120">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-num" data-target="40">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="reveal">
+          <div class="stat-num" data-target="25">0</div>
+          <div class="stat-label">Tools Mastered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="section-eyebrow reveal">What I Do</p>
+      <h2 class="section-title reveal">Services</h2>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">⚙</div>
+          <h3>Operations &amp; Admin Support</h3>
+          <p>Project management, SOP creation, CRM upkeep, calendar management, onboarding and training.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">⚡</div>
+          <h3>AI &amp; Automation</h3>
+          <p>Workflow building with Zapier, Make, n8n. API integrations, webhooks, JSON mapping, prompt engineering.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">📊</div>
+          <h3>Bookkeeping &amp; Accounting</h3>
+          <p>End-to-end bookkeeping (US &amp; AU), bank reconciliation, AP/AR, financial reporting, month-end close.</p>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-icon">🔧</div>
+          <h3>Technical VA Services</h3>
+          <p>Website creation, wireframing, tool &amp; systems setup, error troubleshooting, graphic design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURED WORK
+       ============================================================ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section-eyebrow reveal">Portfolio</p>
+      <h2 class="section-title reveal">Featured Work</h2>
+
+      <!-- data-filter drives JS filtering -->
+      <div class="filter-tabs reveal">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="zapier">Zapier</button>
+        <button class="filter-tab" data-filter="n8n">n8n</button>
+        <button class="filter-tab" data-filter="make">Make.com</button>
+      </div>
+
+      <!-- each card's data-category matches one of the filters -->
+      <div class="work-grid">
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">[ Project screenshot ]</div>
+          <div class="work-body">
+            <h3>AI Weather Forecast Post</h3>
+            <p>Automated daily weather-based social media content.</p>
+            <div class="work-meta">
+              <span>⏱ 10 hrs/week</span>
+              <span>$ 250/week</span>
+            </div>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">OpenAI</span>
+              <span class="work-tag">Facebook API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-category="make">
+          <div class="work-thumb">[ Project screenshot ]</div>
+          <div class="work-body">
+            <h3>Auto Sort Gmail Attachments</h3>
+            <p>AI-powered email attachment organizer for Google Drive.</p>
+            <div class="work-meta">
+              <span>⏱ 7 hrs/week</span>
+              <span>$ 175/week</span>
+            </div>
+            <div class="work-tags">
+              <span class="work-tag">Make.com</span>
+              <span class="work-tag">Gmail</span>
+              <span class="work-tag">Google Drive</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-category="zapier">
+          <div class="work-thumb">[ Project screenshot ]</div>
+          <div class="work-body">
+            <h3>Lead Capture to CRM</h3>
+            <p>Placeholder Zapier automation piping form submissions to CRM.</p>
+            <div class="work-meta">
+              <span>⏱ 5 hrs/week</span>
+              <span>$ 125/week</span>
+            </div>
+            <div class="work-tags">
+              <span class="work-tag">Zapier</span>
+              <span class="work-tag">HubSpot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS & TOOLS
+       ============================================================ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section-eyebrow reveal">Expertise</p>
+      <h2 class="section-title reveal">Skills &amp; Tools</h2>
+
+      <div class="skills-wrapper reveal">
+        <div class="skill-col">
+          <h3>Admin &amp; Ops</h3>
+          <ul>
+            <li>Project management</li>
+            <li>Meeting coordination</li>
+            <li>SOP creation</li>
+            <li>CRM &amp; data upkeep</li>
+            <li>Process optimization</li>
+            <li>Onboarding &amp; training</li>
+            <li>State compliance</li>
+          </ul>
+        </div>
+
+        <div class="skill-col">
+          <h3>Technical &amp; Automation</h3>
+          <ul>
+            <li>AI workflow building</li>
+            <li>API integration</li>
+            <li>HTTP &amp; Webhooks</li>
+            <li>JSON Mapping</li>
+            <li>Wireframing</li>
+            <li>Prompt engineering</li>
+            <li>Error troubleshooting</li>
+          </ul>
+        </div>
+
+        <div class="skill-col">
+          <h3>Accounting</h3>
+          <ul>
+            <li>End-to-end bookkeeping</li>
+            <li>Bank reconciliation</li>
+            <li>Month-end close</li>
+            <li>AP management</li>
+            <li>AR management</li>
+            <li>Invoicing &amp; billing</li>
+            <li>Financial reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tools-platforms reveal">
+        <h4>TOOLS &amp; PLATFORMS</h4>
+        <div class="tools-row">
+          <div class="tool-icon">T1</div>
+          <div class="tool-icon">T2</div>
+          <div class="tool-icon">T3</div>
+          <div class="tool-icon">Zap</div>
+          <div class="tool-icon">GPT</div>
+          <div class="tool-icon">T6</div>
+          <div class="tool-icon">T7</div>
+          <div class="tool-icon">T8</div>
+          <div class="tool-icon">WP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+       ============================================================ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <p class="section-eyebrow reveal">What They Say</p>
+      <h2 class="section-title reveal">Client &amp; Team Feedback</h2>
+
+      <div class="testimonial-row reveal">
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Placeholder testimonial quote goes here. Replace with real feedback.</p>
+          <div class="testimonial-author">Person Name<small>Role, Company</small></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Placeholder testimonial quote goes here. Replace with real feedback.</p>
+          <div class="testimonial-author">Person Name<small>Role, Company</small></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Placeholder testimonial quote goes here. Replace with real feedback.</p>
+          <div class="testimonial-author">Person Name<small>Role, Company</small></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Placeholder testimonial quote goes here. Replace with real feedback.</p>
+          <div class="testimonial-author">Person Name<small>Role, Company</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BOOKING
+       ============================================================ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <p class="section-eyebrow reveal">Get In Touch</p>
+      <h2 class="section-title reveal">Book a Free Discovery Call</h2>
+
+      <div class="booking-embed reveal">
+        [ Calendar embed goes here — e.g. Calendly iframe ]
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Your Name. All rights reserved.</div>
+      <div class="footer-right">
+        <span>✉ your@email.com</span>
+        <span>📞 +00 000 000 0000</span>
+        <span>LinkedIn</span>
+        <span>📍 Your City, Country</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    /* ---------------------------------------------------------
+       (1) NAV — add .scrolled class once user scrolls past ~60px
+       --------------------------------------------------------- */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else                     nav.classList.remove('scrolled');
+    });
+
+    /* ---------------------------------------------------------
+       (2) TYPING EFFECT — cycles through roles in the hero
+       --------------------------------------------------------- */
+    const roles = [
+      'Technical Virtual Assistant',
+      'AI Automation Specialist',
+      'Bookkeeper & Ops Partner',
+      'Workflow Engineer'
+    ];
+    const typedEl = document.getElementById('typed');
+    let roleIndex = 0, charIndex = 0, deleting = false;
+
+    function typeLoop() {
+      const current = roles[roleIndex];
+      typedEl.textContent = deleting
+        ? current.substring(0, charIndex--)
+        : current.substring(0, charIndex++);
+
+      let delay = deleting ? 40 : 80;
+
+      if (!deleting && charIndex === current.length + 1) {
+        deleting = true;
+        delay = 1500;         // pause on full word
+      } else if (deleting && charIndex === -1) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        charIndex = 0;
+        delay = 300;
+      }
+      setTimeout(typeLoop, delay);
+    }
+    typeLoop();
+
+    /* ---------------------------------------------------------
+       (3) REVEAL ON SCROLL — fade + rise as elements enter view
+       --------------------------------------------------------- */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Trigger counter if this reveal contains a stat number
+          const statNum = entry.target.querySelector && entry.target.querySelector('.stat-num');
+          if (statNum) animateCounter(statNum);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ---------------------------------------------------------
+       (4) ANIMATED COUNTERS — 0 → target when section becomes visible
+       --------------------------------------------------------- */
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const duration = 1400;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        // easeOutQuad — fast start, gentle finish
+        const eased = 1 - (1 - progress) * (1 - progress);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    /* ---------------------------------------------------------
+       (5) FILTER TABS — show/hide work cards by category
+       --------------------------------------------------------- */
+    const tabs  = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.work-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // swap active tab
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // filter cards
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('is-hidden', !match);
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>

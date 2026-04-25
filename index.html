@@ -829,7 +829,7 @@
           </div>
           <div class="work-body">
             <h3>Keyword Milestone Discord Notifier</h3>
-            <p>It pulls data from Keyword.com for over 30 clients.</p>
+            <p>Runs on a schedule, pulls live keyword rankings from Keyword.com, syncs position data to a Google Sheet (updating existing rows or inserting new ones), detects ranking milestones, and posts a summary alert to Discord.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Tag Here</span>
@@ -843,8 +843,8 @@
             <img src="images/auditor_n8n_workflow.png" alt="Auditor Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>n8n Workflow Cost Auditor</h3>
+            <p>Manually triggered, it inspects a target n8n workflow (including nested subworkflows) to catalog all AI and non-AI nodes, fetches current model pricing, calculates estimated API costs, and exports a structured JSON cost report.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Tag Here</span>
@@ -858,8 +858,8 @@
             <img src="images/annual_seo_report_n8n_workflow.png" alt="Annual SEO Report Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>Annual SEO Report Builder</h3>
+            <p>Triggered via an n8n form, it reads client CSV data, sends it to the Anthropic API to generate a full SEO report, converts the output to a DOCX via CloudConvert, uploads it to Google Drive, and emails the AM a review link.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Tag Here</span>
@@ -873,8 +873,8 @@
             <img src="images/schema_generator_n8n_workflow.png" alt="Schema Generator Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>AI Schema Markup Generator</h3>
+            <p>Webhook-triggered by a Google Apps Script menu, it scrapes page HTML for queued URLs, sends the content to Claude AI to generate JSON-LD schema markup, creates a Google Doc per page with the result, and updates the Schema Queue sheet status to "Awaiting Review."</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Tag Here</span>
@@ -888,8 +888,8 @@
             <img src="images/metadata_generator_n8n_workflow.png" alt="Metadata Generator Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>AI Meta Title & Description Generator</h3>
+            <p>Form-triggered workflow that reads a client's page URLs from Google Sheets, fetches the top 2 GSC queries per page, scrapes the page HTML, and uses GPT-4o to generate SEO-optimized meta titles and descriptions written back to the sheet.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Tag Here</span>
@@ -903,8 +903,8 @@
             <img src="images/monday.com_automation_2_n8n_workflow.png" alt="Monday.com Automation 2 Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>Tech Main Task Completion Cleaner</h3>
+            <p>Mirrors the above but fires from the Tech Main board side — when a Tech Main item is marked "Completed," it reads its formula_1 link column to find the originating client board item and deletes both records.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Monday.com</span>
@@ -918,8 +918,8 @@
             <img src="images/monday.com_automation_n8n_workflow.png" alt="Monday.com Automation Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>Client Board Task Completion Cleaner</h3>
+            <p>Listens for "Completed" status changes on client Monday.com boards, searches the Tech Main board for a matching linked item using the formula URL column, then deletes both the Tech Main duplicate and the original client task.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Monday.com</span>
@@ -933,8 +933,8 @@
             <img src="images/monthly_ga4_kpi_extractor_n8n_workflow.png" alt="Monthly GA4 KPI Extractor Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>Monthly GA4 & GSC KPI Extractor</h3>
+            <p>Runs on a monthly schedule, loops through all active clients in a config sheet, and pulls full-month GA4 metrics (sessions, conversions, landing pages) plus GSC data per client, appending each to dedicated tabs in the KPI Google Sheet.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">GA4</span>
@@ -948,8 +948,8 @@
             <img src="images/weekly_ga4_gsc_kpi_extractor_n8n_workflow.png" alt="Weekly GA4 GSC KPI Extractor Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>Weekly GA4 & GSC KPI Extractor</h3>
+            <p>Fires every Tuesday at 12:01 AM Pacific, reads active clients from the Client Config tab, fetches the prior week's organic GA4 metrics and GSC performance per client, and appends the results to the GA4 Data and GSC Data tabs in the KPI sheet.Fires every Tuesday at 12:01 AM Pacific, reads active clients from the Client Config tab, fetches the prior week's organic GA4 metrics and GSC performance per client, and appends the results to the GA4 Data and GSC Data tabs in the KPI sheet.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">GA4</span>
@@ -964,8 +964,8 @@
             <img src="images/clients_anniversary_notifier_n8n_workflow.png" alt="Clients Anniversary Notifier Workflow" />
           </div>
           <div class="work-body">
-            <h3>Workflow Title Here</h3>
-            <p>Short description of what this workflow does.</p>
+            <h3>Client Anniversary Discord Notifier</h3>
+            <p>Receives a webhook POST containing client milestone data (name, onboarding date, AM, plan) and immediately sends a formatted @here celebration message to a Discord channel. The trigger is handled by the Apps Script code installed on the main sheet.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
               <span class="work-tag">Tag Here</span>

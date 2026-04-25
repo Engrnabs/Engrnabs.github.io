@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio — Technical / Automation</title>
 
-  <!-- Google Fonts: Manrope for UI, JetBrains Mono for technical accents -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,7 +16,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      /* --- Core palette: black + orange "technical" theme --- */
       --bg:            #0a0a0b;
       --bg-alt:        #111114;
       --card:          #14141a;
@@ -26,14 +24,11 @@
       --border-strong: #2e2e3a;
       --text:          #f4f4f6;
       --text-muted:    #8a8a96;
-
-      /* --- Accent: vibrant orange with glow --- */
       --accent:        #ff6a00;
       --accent-hi:     #ff8a33;
       --accent-lo:     #cc4f00;
       --accent-glow:   rgba(255, 106, 0, 0.35);
       --accent-soft:   rgba(255, 106, 0, 0.08);
-
       --font-sans: 'Manrope', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -48,7 +43,6 @@
       overflow-x: hidden;
     }
 
-    /* Faint grid pattern across the whole page — "dashboard" vibe */
     body::before {
       content: "";
       position: fixed;
@@ -106,7 +100,6 @@
       transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
       border-bottom: 1px solid transparent;
     }
-    /* Toggled by JS when user scrolls */
     .nav.scrolled {
       background: rgba(10, 10, 11, 0.75);
       backdrop-filter: blur(12px);
@@ -121,11 +114,7 @@
       margin: 0 auto;
       padding: 0 24px;
     }
-    .logo {
-      font-weight: 800;
-      font-size: 18px;
-      letter-spacing: -0.01em;
-    }
+    .logo { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; }
     .logo span { color: var(--accent); }
 
     .nav-links { display: flex; gap: 32px; }
@@ -136,13 +125,11 @@
       padding: 4px 0;
       transition: color 0.2s;
     }
-    /* Underline slides in on hover */
     .nav-links a::after {
       content: "";
       position: absolute;
       left: 0; bottom: 0;
-      width: 0;
-      height: 1px;
+      width: 0; height: 1px;
       background: var(--accent);
       transition: width 0.25s ease;
     }
@@ -165,7 +152,6 @@
     }
     .nav-icon:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* --- Buttons --- */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -204,20 +190,16 @@
       position: relative;
       overflow: hidden;
     }
-    /* Ambient orange glow behind the hero */
     .hero::after {
       content: "";
       position: absolute;
-      right: -100px;
-      top: 40%;
+      right: -100px; top: 40%;
       transform: translateY(-50%);
-      width: 500px;
-      height: 500px;
+      width: 500px; height: 500px;
       background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
       z-index: 0;
       pointer-events: none;
     }
-
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -226,8 +208,6 @@
       position: relative;
       z-index: 1;
     }
-
-    /* Terminal-style status pill above the headline */
     .hero-status {
       display: inline-flex;
       align-items: center;
@@ -250,9 +230,8 @@
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; }
-      50%      { opacity: 0.4; }
+      50%       { opacity: 0.4; }
     }
-
     .hero-title {
       font-size: 56px;
       line-height: 1.05;
@@ -260,18 +239,15 @@
       letter-spacing: -0.03em;
     }
     .hero-title .accent { color: var(--accent); display: block; }
-
-    /* Rotating "> I am a ___" line under the headline */
     .hero-rotator {
       font-family: var(--font-mono);
       font-size: 18px;
       color: var(--text-muted);
       margin-top: 18px;
-      height: 28px;           /* lock height so layout doesn't jump */
+      height: 28px;
     }
     .hero-rotator .prompt { color: var(--accent); }
     .hero-rotator .typed  { color: var(--text); }
-    /* Blinking cursor */
     .cursor {
       display: inline-block;
       width: 8px;
@@ -283,7 +259,6 @@
       0%, 50%  { opacity: 1; }
       51%,100% { opacity: 0; }
     }
-
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
@@ -300,7 +275,6 @@
       color: var(--text-muted);
     }
     .tag::before { content: "# "; color: var(--accent); }
-
     .hero-desc {
       color: var(--text-muted);
       margin-bottom: 32px;
@@ -309,7 +283,6 @@
     }
     .hero-actions { display: flex; gap: 12px; }
 
-    /* --- Right column: portrait + floating tools --- */
     .hero-visual {
       position: relative;
       display: flex;
@@ -318,8 +291,7 @@
       min-height: 380px;
     }
     .portrait {
-      width: 340px;
-      height: 340px;
+      width: 340px; height: 340px;
       border-radius: 50%;
       background-image: url('https://raw.githubusercontent.com/Engrnabs/Engrnabs.github.io/main/images/My%20Digital%20Profile.png');
       background-size: cover;
@@ -327,9 +299,7 @@
       border: 2px solid var(--accent);
       box-shadow: 0 0 80px var(--accent-glow);
       position: relative;
-      /* Drop your image in: background-image: url('...'); background-size: cover; */
     }
-    /* Slowly spinning dashed ring around the portrait */
     .portrait::before {
       content: "";
       position: absolute;
@@ -343,8 +313,7 @@
 
     .floating-icons {
       position: absolute;
-      right: 10px;
-      top: 50%;
+      right: 10px; top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
@@ -373,7 +342,7 @@
     }
 
     /* ============================================================
-       4. STATS BAND (animated counters)
+       4. STATS BAND
        ============================================================ */
     .stats {
       border-top: 1px solid var(--border);
@@ -419,7 +388,6 @@
       overflow: hidden;
       transition: all 0.25s;
     }
-    /* Orange accent bar that reveals on hover */
     .service-card::before {
       content: "";
       position: absolute;
@@ -436,7 +404,6 @@
       transform: translateY(-3px);
     }
     .service-card:hover::before { transform: scaleY(1); }
-
     .service-icon {
       width: 42px; height: 42px;
       border-radius: 8px;
@@ -449,12 +416,8 @@
       color: var(--accent);
       font-size: 18px;
     }
-    .service-card h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    .service-card p { color: var(--text-muted); font-size: 14px; }
+    .service-card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 700; }
+    .service-card p  { color: var(--text-muted); font-size: 14px; }
 
     /* ============================================================
        6. FEATURED WORK
@@ -484,7 +447,6 @@
       border-color: var(--accent);
       box-shadow: 0 0 16px var(--accent-glow);
     }
-
     .work-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -502,7 +464,6 @@
       transform: translateY(-4px);
       box-shadow: 0 10px 40px -10px var(--accent-glow);
     }
-    /* JS toggles this when filtered out */
     .work-card.is-hidden { display: none; }
 
     .work-thumb {
@@ -514,11 +475,21 @@
       color: #888;
       font-size: 13px;
       font-family: var(--font-mono);
+      overflow: hidden;
     }
+
+    /* ✅ FIX: makes images fill the thumbnail box properly */
+    .work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
     .work-body { padding: 22px; }
     .work-body h3 { font-size: 17px; margin-bottom: 6px; }
     .work-body p  { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; }
-
     .work-meta {
       display: flex;
       gap: 18px;
@@ -527,11 +498,7 @@
       margin-bottom: 16px;
       font-family: var(--font-mono);
     }
-    .work-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .work-tag {
       padding: 4px 10px;
       background: var(--accent-soft);
@@ -556,7 +523,7 @@
       margin-bottom: 24px;
     }
     .skill-col h3 {
-      color: var(--ac cent);
+      color: var(--accent); /* ✅ FIX: was "--ac cent" (had a space) */
       font-size: 13px;
       margin-bottom: 18px;
       font-family: var(--font-mono);
@@ -595,12 +562,7 @@
       margin-bottom: 24px;
       font-family: var(--font-mono);
     }
-    .tools-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+    .tools-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
     .tool-icon {
       width: 54px; height: 54px;
       border-radius: 10px;
@@ -615,11 +577,7 @@
       transition: all 0.25s;
       cursor: pointer;
     }
-    .tool-icon:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-3px);
-    }
+    .tool-icon:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
 
     /* ============================================================
        8. TESTIMONIALS
@@ -635,7 +593,6 @@
     .testimonial-row::-webkit-scrollbar { height: 6px; }
     .testimonial-row::-webkit-scrollbar-track { background: var(--card); }
     .testimonial-row::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
-
     .testimonial-card {
       flex: 0 0 340px;
       background: var(--card);
@@ -645,20 +602,8 @@
       transition: border-color 0.2s;
     }
     .testimonial-card:hover { border-color: var(--accent); }
-
-    .quote-mark {
-      color: var(--accent);
-      font-size: 28px;
-      font-family: var(--font-mono);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .testimonial-card p {
-      color: var(--text-muted);
-      font-size: 14px;
-      margin-bottom: 22px;
-      font-style: italic;
-    }
+    .quote-mark { color: var(--accent); font-size: 28px; font-family: var(--font-mono); line-height: 1; margin-bottom: 10px; }
+    .testimonial-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 22px; font-style: italic; }
     .testimonial-author { font-size: 14px; font-weight: 600; }
     .testimonial-author small {
       display: block;
@@ -707,17 +652,14 @@
     .footer-right span:hover { color: var(--accent); cursor: pointer; }
 
     /* ============================================================
-       11. REVEAL-ON-SCROLL (driven by JS IntersectionObserver)
+       11. REVEAL ON SCROLL
        ============================================================ */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
     /* ============================================================
        12. RESPONSIVE
@@ -745,7 +687,6 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <div class="logo">Nabs<span>.SEO</span></div>
-
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -753,7 +694,6 @@
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-
       <div class="nav-right">
         <span class="nav-icon">FB</span>
         <span class="nav-icon">IG</span>
@@ -773,35 +713,28 @@
           <span class="status-dot"></span>
           <span>Now open to work</span>
         </div>
-
         <h1 class="hero-title">
           Hello, I'm
           <span class="accent">Nabel Tantao.</span>
         </h1>
-
-        <!-- JS types rotating roles into .typed -->
         <div class="hero-rotator">
           <span class="prompt">&gt;</span>
           <span class="typed" id="typed"></span><span class="cursor">&nbsp;</span>
         </div>
-
         <div class="hero-tags">
           <span class="tag">Technical SEO</span>
           <span class="tag">On-page SEO</span>
-          <span class="tag">n8 Automation</span>
+          <span class="tag">n8n Automation</span>
         </div>
-
         <p class="hero-desc">
-          Not only helping businesses show up where it matters - on Google and beyond with SEO,
+          Not only helping businesses show up where it matters — on Google and beyond with SEO,
           but also helping businesses run smoother without wasting time or money with smart n8n automated workflows.
         </p>
-
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Let Me Help You! →</a>
           <a href="#services" class="btn btn-outline">See What I Can Offer</a>
         </div>
       </div>
-
       <div class="hero-visual reveal">
         <div class="portrait"></div>
         <div class="floating-icons">
@@ -845,32 +778,28 @@
        ============================================================ -->
   <section class="section" id="services">
     <div class="container">
-      <p class="section-eyebrow reveal">Expertises I Provide</p>
+      <p class="section-eyebrow reveal">Expertise I Provide</p>
       <h2 class="section-title reveal">Services</h2>
-
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-icon">⚙</div>
           <h3>Technical SEO</h3>
-          <p>Technical SEO Audits & Fixes, Data & KPI Extraction (Screaming Frog/GA4/GSC), Page Speed Optimization, Structured Data Implementation,and stuff like that.</p>
+          <p>Technical SEO Audits &amp; Fixes, Data &amp; KPI Extraction (Screaming Frog/GA4/GSC), Page Speed Optimization, Structured Data Implementation, and more.</p>
         </div>
-
         <div class="service-card reveal">
           <div class="service-icon">⚡</div>
           <h3>AI Automation</h3>
           <p>n8n Workflow Automation, Prompt Engineering, API, Webhook, JSON Mapping, Claude Code - VSC Integrations: MCP, Skills, etc.</p>
         </div>
-
         <div class="service-card reveal">
           <div class="service-icon">📊</div>
           <h3>On-page SEO</h3>
-          <p>On-page SEO Audit, Keyword Research, Meta Elements Recos/Implementation, Internal Linking, and similar.</p>
+          <p>On-page SEO Audit, Keyword Research, Meta Elements Recommendations &amp; Implementation, Internal Linking, and similar.</p>
         </div>
-
         <div class="service-card reveal">
           <div class="service-icon">🔧</div>
           <h3>General VA</h3>
-          <p>WordPress Dev, Shopify/WooCommerce Product Listing, GBP Optimization, Social Media Management, Daily Work Assistance</p>
+          <p>WordPress Dev, Shopify/WooCommerce Product Listing, GBP Optimization, Social Media Management, Daily Work Assistance.</p>
         </div>
       </div>
     </div>
@@ -884,65 +813,181 @@
       <p class="section-eyebrow reveal">Portfolio</p>
       <h2 class="section-title reveal">Featured Work</h2>
 
-      <!-- data-filter drives JS filtering -->
       <div class="filter-tabs reveal">
         <button class="filter-tab active" data-filter="all">All</button>
-        <button class="filter-tab" data-filter="zapier">Zapier</button>
         <button class="filter-tab" data-filter="n8n">n8n</button>
-        <button class="filter-tab" data-filter="make">Make.com</button>
+        <button class="filter-tab" data-filter="websites">Websites</button>
+        <button class="filter-tab" data-filter="seo">SEO</button>
       </div>
 
-      <!-- each card's data-category matches one of the filters -->
       <div class="work-grid">
+
+        <!-- Card 1 — change title, description, tags to your own -->
         <div class="work-card reveal" data-category="n8n">
-          <div class="work-thumb">[ Project screenshot ]</div>
+          <div class="work-thumb">
+            <img src="images/annual_seo_report_n8n_workflow.png" alt="Annual SEO Report Workflow" />
+          </div>
           <div class="work-body">
-            <h3>AI Weather Forecast Post</h3>
-            <p>Automated daily weather-based social media content.</p>
-            <div class="work-meta">
-              <span>⏱ 10 hrs/week</span>
-              <span>$ 250/week</span>
-            </div>
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
             <div class="work-tags">
               <span class="work-tag">n8n</span>
-              <span class="work-tag">OpenAI</span>
-              <span class="work-tag">Facebook API</span>
+              <span class="work-tag">Tag Here</span>
             </div>
           </div>
         </div>
 
-        <div class="work-card reveal" data-category="make">
-          <div class="work-thumb">[ Project screenshot ]</div>
+        <!-- Card 2 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/auditor_n8n_workflow.png" alt="Auditor Workflow" />
+          </div>
           <div class="work-body">
-            <h3>Auto Sort Gmail Attachments</h3>
-            <p>AI-powered email attachment organizer for Google Drive.</p>
-            <div class="work-meta">
-              <span>⏱ 7 hrs/week</span>
-              <span>$ 175/week</span>
-            </div>
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
             <div class="work-tags">
-              <span class="work-tag">Make.com</span>
-              <span class="work-tag">Gmail</span>
-              <span class="work-tag">Google Drive</span>
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Tag Here</span>
             </div>
           </div>
         </div>
 
-        <div class="work-card reveal" data-category="zapier">
-          <div class="work-thumb">[ Project screenshot ]</div>
+        <!-- Card 3 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/clients_anniversary_notifier_n8n_workflow.png" alt="Clients Anniversary Notifier Workflow" />
+          </div>
           <div class="work-body">
-            <h3>Lead Capture to CRM</h3>
-            <p>Placeholder Zapier automation piping form submissions to CRM.</p>
-            <div class="work-meta">
-              <span>⏱ 5 hrs/week</span>
-              <span>$ 125/week</span>
-            </div>
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
             <div class="work-tags">
-              <span class="work-tag">Zapier</span>
-              <span class="work-tag">HubSpot</span>
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Tag Here</span>
             </div>
           </div>
         </div>
+
+        <!-- Card 4 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/keyword_milestones_notifier_n8n_workflow.png" alt="Keyword Milestones Notifier Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Tag Here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/metadata_generator_n8n_workflow.png" alt="Metadata Generator Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Tag Here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/monday.com_automation_2_n8n_workflow.png" alt="Monday.com Automation 2 Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Monday.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/monday.com_automation_n8n_workflow.png" alt="Monday.com Automation Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Monday.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/monthly_ga4_kpi_extractor_n8n_workflow.png" alt="Monthly GA4 KPI Extractor Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">GA4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/my_n8n_workflows.png" alt="My n8n Workflows" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Tag Here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/schema_generator_n8n_workflow.png" alt="Schema Generator Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">Tag Here</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="work-card reveal" data-category="n8n">
+          <div class="work-thumb">
+            <img src="images/weekly_ga4_gsc_kpi_extractor_n8n_workflow.png" alt="Weekly GA4 GSC KPI Extractor Workflow" />
+          </div>
+          <div class="work-body">
+            <h3>Workflow Title Here</h3>
+            <p>Short description of what this workflow does.</p>
+            <div class="work-tags">
+              <span class="work-tag">n8n</span>
+              <span class="work-tag">GA4</span>
+              <span class="work-tag">GSC</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -954,7 +999,6 @@
     <div class="container">
       <p class="section-eyebrow reveal">Expertise</p>
       <h2 class="section-title reveal">Skills &amp; Tools</h2>
-
       <div class="skills-wrapper reveal">
         <div class="skill-col">
           <h3>Admin &amp; Ops</h3>
@@ -968,7 +1012,6 @@
             <li>State compliance</li>
           </ul>
         </div>
-
         <div class="skill-col">
           <h3>Technical &amp; Automation</h3>
           <ul>
@@ -981,33 +1024,31 @@
             <li>Error troubleshooting</li>
           </ul>
         </div>
-
         <div class="skill-col">
-          <h3>Accounting</h3>
+          <h3>SEO</h3>
           <ul>
-            <li>End-to-end bookkeeping</li>
-            <li>Bank reconciliation</li>
-            <li>Month-end close</li>
-            <li>AP management</li>
-            <li>AR management</li>
-            <li>Invoicing &amp; billing</li>
-            <li>Financial reporting</li>
+            <li>Technical SEO audits</li>
+            <li>On-page optimization</li>
+            <li>Keyword research</li>
+            <li>Meta implementation</li>
+            <li>Internal linking</li>
+            <li>Schema markup</li>
+            <li>GA4 &amp; GSC reporting</li>
           </ul>
         </div>
       </div>
-
       <div class="tools-platforms reveal">
         <h4>TOOLS &amp; PLATFORMS</h4>
         <div class="tools-row">
-          <div class="tool-icon">T1</div>
-          <div class="tool-icon">T2</div>
-          <div class="tool-icon">T3</div>
-          <div class="tool-icon">Zap</div>
+          <div class="tool-icon">n8n</div>
+          <div class="tool-icon">GA4</div>
+          <div class="tool-icon">GSC</div>
+          <div class="tool-icon">SF</div>
           <div class="tool-icon">GPT</div>
-          <div class="tool-icon">T6</div>
-          <div class="tool-icon">T7</div>
-          <div class="tool-icon">T8</div>
           <div class="tool-icon">WP</div>
+          <div class="tool-icon">Mon</div>
+          <div class="tool-icon">Slack</div>
+          <div class="tool-icon">API</div>
         </div>
       </div>
     </div>
@@ -1020,7 +1061,6 @@
     <div class="container">
       <p class="section-eyebrow reveal">What They Say</p>
       <h2 class="section-title reveal">Client &amp; Team Feedback</h2>
-
       <div class="testimonial-row reveal">
         <div class="testimonial-card">
           <div class="quote-mark">&ldquo;</div>
@@ -1053,7 +1093,6 @@
     <div class="container">
       <p class="section-eyebrow reveal">Get In Touch</p>
       <h2 class="section-title reveal">Book a Free Discovery Call</h2>
-
       <div class="booking-embed reveal">
         [ Calendar embed goes here — e.g. Calendly iframe ]
       </div>
@@ -1065,7 +1104,7 @@
        ============================================================ -->
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© 2026 Your Name. All rights reserved.</div>
+      <div>© 2026 Nabel Tantao. All rights reserved.</div>
       <div class="footer-right">
         <span>✉ your@email.com</span>
         <span>📞 +00 000 000 0000</span>
@@ -1079,18 +1118,14 @@
        JAVASCRIPT
        ============================================================ -->
   <script>
-    /* ---------------------------------------------------------
-       (1) NAV — add .scrolled class once user scrolls past ~60px
-       --------------------------------------------------------- */
+    // (1) Nav blur on scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 60) nav.classList.add('scrolled');
       else                     nav.classList.remove('scrolled');
     });
 
-    /* ---------------------------------------------------------
-       (2) TYPING EFFECT — cycles through roles in the hero
-       --------------------------------------------------------- */
+    // (2) Typing effect
     const roles = [
       'Technical SEO Specialist',
       'On-page SEO Specialist',
@@ -1105,50 +1140,33 @@
       typedEl.textContent = deleting
         ? current.substring(0, charIndex--)
         : current.substring(0, charIndex++);
-
       let delay = deleting ? 40 : 80;
-
-      if (!deleting && charIndex === current.length + 1) {
-        deleting = true;
-        delay = 1500;         // pause on full word
-      } else if (deleting && charIndex === -1) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        charIndex = 0;
-        delay = 300;
-      }
+      if (!deleting && charIndex === current.length + 1) { deleting = true; delay = 1500; }
+      else if (deleting && charIndex === -1) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; charIndex = 0; delay = 300; }
       setTimeout(typeLoop, delay);
     }
     typeLoop();
 
-    /* ---------------------------------------------------------
-       (3) REVEAL ON SCROLL — fade + rise as elements enter view
-       --------------------------------------------------------- */
+    // (3) Reveal on scroll
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          // Trigger counter if this reveal contains a stat number
           const statNum = entry.target.querySelector && entry.target.querySelector('.stat-num');
           if (statNum) animateCounter(statNum);
           revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
-
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ---------------------------------------------------------
-       (4) ANIMATED COUNTERS — 0 → target when section becomes visible
-       --------------------------------------------------------- */
+    // (4) Animated counters
     function animateCounter(el) {
       const target = parseInt(el.dataset.target, 10);
       const duration = 1400;
       const startTime = performance.now();
-
       function tick(now) {
         const progress = Math.min((now - startTime) / duration, 1);
-        // easeOutQuad — fast start, gentle finish
         const eased = 1 - (1 - progress) * (1 - progress);
         el.textContent = Math.floor(eased * target);
         if (progress < 1) requestAnimationFrame(tick);
@@ -1157,19 +1175,13 @@
       requestAnimationFrame(tick);
     }
 
-    /* ---------------------------------------------------------
-       (5) FILTER TABS — show/hide work cards by category
-       --------------------------------------------------------- */
+    // (5) Filter tabs
     const tabs  = document.querySelectorAll('.filter-tab');
     const cards = document.querySelectorAll('.work-card');
-
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // swap active tab
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
-        // filter cards
         const filter = tab.dataset.filter;
         cards.forEach(card => {
           const match = filter === 'all' || card.dataset.category === filter;

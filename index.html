@@ -656,6 +656,50 @@
     }
     .tool-icon:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
 
+    .tools-category {
+      margin-bottom: 24px;
+    }
+
+    .tools-cat-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .tool-icon {
+      position: relative;
+    }
+
+    .tool-icon::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: var(--card);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      white-space: nowrap;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border-strong);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      z-index: 10;
+    }
+
+    .tool-icon:hover::after {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
     /* ============================================================
        8. TESTIMONIALS
        ============================================================ */
@@ -1266,17 +1310,98 @@
       </div>
       <div class="tools-platforms reveal">
         <h4>TOOLS &amp; PLATFORMS</h4>
-        <div class="tools-row">
-          <div class="tool-icon">n8n</div>
-          <div class="tool-icon">GA4</div>
-          <div class="tool-icon">GSC</div>
-          <div class="tool-icon">SF</div>
-          <div class="tool-icon">GPT</div>
-          <div class="tool-icon">WP</div>
-          <div class="tool-icon">Mon</div>
-          <div class="tool-icon">Slack</div>
-          <div class="tool-icon">API</div>
+
+        <div class="tools-category">
+          <span class="tools-cat-label">AI</span>
+          <div class="tools-row">
+            <div class="tool-icon" data-tooltip="ChatGPT">GPT</div>
+            <div class="tool-icon" data-tooltip="Claude">Claude</div>
+            <div class="tool-icon" data-tooltip="Perplexity">Perp</div>
+            <div class="tool-icon" data-tooltip="Google AI Studio">G·AI</div>
+            <div class="tool-icon" data-tooltip="NotebookLM">NbLM</div>
+            <div class="tool-icon" data-tooltip="Midjourney">MJ</div>
+          </div>
         </div>
+
+        <div class="tools-category">
+          <span class="tools-cat-label">SEO</span>
+          <div class="tools-row">
+            <div class="tool-icon" data-tooltip="SEMrush">Sem</div>
+            <div class="tool-icon" data-tooltip="Ahrefs">Ahrf</div>
+            <div class="tool-icon" data-tooltip="Screaming Frog">SF</div>
+            <div class="tool-icon" data-tooltip="BrightLocal">BrLo</div>
+            <div class="tool-icon" data-tooltip="Neuronwriter">Neur</div>
+            <div class="tool-icon" data-tooltip="SEO Pro">SEO+</div>
+            <div class="tool-icon" data-tooltip="SEOQuake">SeoQ</div>
+            <div class="tool-icon" data-tooltip="RankMath">Rank</div>
+            <div class="tool-icon" data-tooltip="Metricool">Mtrc</div>
+            <div class="tool-icon" data-tooltip="Detailed SEO">DSEO</div>
+            <div class="tool-icon" data-tooltip="Keywords.com">Kw</div>
+            <div class="tool-icon" data-tooltip="Clicky">Clky</div>
+            <div class="tool-icon" data-tooltip="CallRail">CRail</div>
+            <div class="tool-icon" data-tooltip="Tag Assistant">TagA</div>
+            <div class="tool-icon" data-tooltip="Uptime Robot">URbt</div>
+            <div class="tool-icon" data-tooltip="W3Techs">W3T</div>
+            <div class="tool-icon" data-tooltip="Sitecheck Sucuri">Scri</div>
+            <div class="tool-icon" data-tooltip="Bing Webmaster Tools">BngW</div>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <span class="tools-cat-label">Google</span>
+          <div class="tools-row">
+            <div class="tool-icon" data-tooltip="Google Analytics 4">GA4</div>
+            <div class="tool-icon" data-tooltip="Google Search Console">GSC</div>
+            <div class="tool-icon" data-tooltip="PageSpeed Insights">PSI</div>
+            <div class="tool-icon" data-tooltip="Looker Studio">LkSt</div>
+            <div class="tool-icon" data-tooltip="Google Workspace">GWS</div>
+            <div class="tool-icon" data-tooltip="Mobile-Friendly Test">MFT</div>
+            <div class="tool-icon" data-tooltip="Schema.org Validator">Schm</div>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <span class="tools-cat-label">Automation</span>
+          <div class="tools-row">
+            <div class="tool-icon" data-tooltip="n8n">n8n</div>
+            <div class="tool-icon" data-tooltip="Make">Make</div>
+            <div class="tool-icon" data-tooltip="Airtable">Air</div>
+            <div class="tool-icon" data-tooltip="Monday.com">Mon</div>
+            <div class="tool-icon" data-tooltip="Teamwork">TmW</div>
+            <div class="tool-icon" data-tooltip="Time Doctor">TmDr</div>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <span class="tools-cat-label">CMS &amp; Dev</span>
+          <div class="tools-row">
+            <div class="tool-icon" data-tooltip="WordPress">WP</div>
+            <div class="tool-icon" data-tooltip="Wix">Wix</div>
+            <div class="tool-icon" data-tooltip="Shopify">Shpf</div>
+            <div class="tool-icon" data-tooltip="ClickFunnels">CF</div>
+            <div class="tool-icon" data-tooltip="Sanity Studio">Snty</div>
+            <div class="tool-icon" data-tooltip="WPML Plugin">WPML</div>
+            <div class="tool-icon" data-tooltip="Figma">Fgma</div>
+            <div class="tool-icon" data-tooltip="Namecheap">NChe</div>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <span class="tools-cat-label">Productivity</span>
+          <div class="tools-row">
+            <div class="tool-icon" data-tooltip="Slack">Slck</div>
+            <div class="tool-icon" data-tooltip="Gmail">Gml</div>
+            <div class="tool-icon" data-tooltip="Dropbox">Drpb</div>
+            <div class="tool-icon" data-tooltip="Loom">Loom</div>
+            <div class="tool-icon" data-tooltip="Twilio">Twlo</div>
+            <div class="tool-icon" data-tooltip="Invoicely">Invl</div>
+            <div class="tool-icon" data-tooltip="Keeper Security">Kpr</div>
+            <div class="tool-icon" data-tooltip="LastPass">LsPa</div>
+            <div class="tool-icon" data-tooltip="Lightshot">Lsht</div>
+            <div class="tool-icon" data-tooltip="VPN">VPN</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

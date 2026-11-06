@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Technical / Automation</title>
+  <title>Nabel Tantao | Tech SEO & Automation Specialist</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -478,9 +478,6 @@
       overflow: hidden;
     }
 
-    /* ✅ FIX: makes images fill the thumbnail box properly */
-
-    /* Website card thumbnail — no image version */
     .website-thumb {
       background: var(--card);
       border-bottom: 1px solid var(--border-strong);
@@ -587,7 +584,7 @@
     }
 
     /* ============================================================
-       7. SKILLS & TOOLS
+       7. SKILLS & TOOLS (UPDATED DESIGN)
        ============================================================ */
     .skills-wrapper {
       background: var(--card);
@@ -600,7 +597,7 @@
       margin-bottom: 24px;
     }
     .skill-col h3 {
-      color: var(--accent); /* ✅ FIX: was "--ac cent" (had a space) */
+      color: var(--accent); 
       font-size: 13px;
       margin-bottom: 18px;
       font-family: var(--font-mono);
@@ -629,35 +626,22 @@
       background: var(--card);
       border: 1px solid var(--border-strong);
       border-radius: 10px;
-      padding: 32px;
+      padding: 40px 32px;
       text-align: center;
     }
     .tools-platforms h4 {
       font-size: 12px;
       letter-spacing: 3px;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 32px;
       font-family: var(--font-mono);
     }
-    .tools-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
-    .tool-icon {
-      width: 54px; height: 54px;
-      border-radius: 10px;
-      background: var(--bg-alt);
-      border: 1px solid var(--border-strong);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-family: var(--font-mono);
-      color: var(--text-muted);
-      transition: all 0.25s;
-      cursor: pointer;
-    }
-    .tool-icon:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-
+    
     .tools-category {
-      margin-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .tools-category:last-child {
+      margin-bottom: 0;
     }
 
     .tools-cat-label {
@@ -667,37 +651,37 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 12px;
-      text-align: left;
+      margin-bottom: 16px;
+      text-align: center;
     }
 
-    .tool-icon {
-      position: relative;
+    /* NEW CHIP DESIGN FOR TOOLS */
+    .tools-row { 
+      display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+      gap: 12px; 
     }
-
-    .tool-icon::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: calc(100% + 8px);
-      left: 50%;
-      transform: translateX(-50%) translateY(4px);
-      background: var(--card);
-      color: var(--text);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      white-space: nowrap;
-      padding: 5px 10px;
-      border-radius: 4px;
+    
+    .tool-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 18px;
+      background: var(--bg-alt);
       border: 1px solid var(--border-strong);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s, transform 0.2s;
-      z-index: 10;
+      border-radius: 20px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      transition: all 0.25s;
+      cursor: default;
     }
-
-    .tool-icon:hover::after {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
+    
+    .tool-chip:hover { 
+      border-color: var(--accent); 
+      color: var(--accent); 
+      transform: translateY(-2px); 
+      background: var(--accent-soft);
     }
 
     /* ============================================================
@@ -859,8 +843,8 @@
       <div class="nav-right">
         <a href="https://www.facebook.com/Nabsthesidehustler/" class="nav-icon">FB</a>
         <a href="https://www.instagram.com/engr.nabs/" class="nav-icon">IG</a>
-        <a href="www.linkedin.com/in/engrnabs" class="nav-icon">LI</a>
-        <a href="https://drive.google.com/file/d/1CVRD17LWksgMfzDEB8Tihxw39FokafNz/view?usp=sharing" target="_blank" class="btn btn-primary">Download Resume</a>
+        <a href="https://www.youtube.com/@nabeltantao38" class="nav-icon">YT</a>
+        <a href="https://drive.google.com/file/d/1vvzXMW1OqMucYRh8SamMNdOWY6EFQB5V/view?usp=sharing" target="_blank" class="btn btn-primary">Download Resume</a>
       </div>
     </div>
   </nav>
@@ -884,13 +868,12 @@
           <span class="typed" id="typed"></span><span class="cursor">&nbsp;</span>
         </div>
         <div class="hero-tags">
-          <span class="tag">Technical SEO</span>
-          <span class="tag">On-page SEO</span>
-          <span class="tag">n8n Automation</span>
+          <span class="tag">Tech SEO</span>
+          <span class="tag">AI & Automation</span>
+          <span class="tag">LLM Integration</span>
         </div>
         <p class="hero-desc">
-          Not only helping businesses show up where it matters — on Google and beyond with SEO,
-          but also helping businesses run smoother without wasting time or money with smart n8n automated workflows.
+          I am a data-driven Technical SEO and Automation Specialist with a background in engineering. I actively engineer complex workflows using n8n, Make, and Hermes to eliminate manual redundancies and streamline operations. Whether it's managing large-scale site migrations, integrating LLMs, or executing comprehensive technical audits, I build scalable processes that drive real ranking growth.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Let's Work Together →</a>
@@ -900,10 +883,10 @@
       <div class="hero-visual reveal">
         <div class="portrait"></div>
         <div class="floating-icons">
-          <div class="floating-icon">AI</div>
           <div class="floating-icon">SEO</div>
-          <div class="floating-icon">WEB</div>
-          <div class="floating-icon">TECH</div>
+          <div class="floating-icon">n8n</div>
+          <div class="floating-icon">AI</div>
+          <div class="floating-icon">API</div>
         </div>
       </div>
     </div>
@@ -916,19 +899,19 @@
     <div class="container">
       <div class="stats-grid">
         <div class="reveal">
-          <div class="stat-num" data-target="2+">0</div>
+          <div class="stat-num" data-target="5">0</div>
           <div class="stat-label">Years Experience</div>
         </div>
         <div class="reveal">
-          <div class="stat-num" data-target="15+">0</div>
+          <div class="stat-num" data-target="32">0</div>
           <div class="stat-label">Projects Delivered</div>
         </div>
         <div class="reveal">
-          <div class="stat-num" data-target="3">0</div>
+          <div class="stat-num" data-target="12">0</div>
           <div class="stat-label">Happy Clients</div>
         </div>
         <div class="reveal">
-          <div class="stat-num" data-target="20+">0</div>
+          <div class="stat-num" data-target="56">0</div>
           <div class="stat-label">Tools Mastered</div>
         </div>
       </div>
@@ -946,22 +929,22 @@
         <div class="service-card reveal">
           <div class="service-icon">⚙</div>
           <h3>Technical SEO</h3>
-          <p>Technical SEO Audits &amp; Fixes, Data &amp; KPI Extraction (Screaming Frog/GA4/GSC), Page Speed Optimization, Structured Data Implementation, and more.</p>
+          <p>Technical SEO Audits &amp; Fixes, Data &amp; KPI Extraction (Screaming Frog/GA4/GSC), Page Speed Optimization, Structured Data Implementation, and Migration Audits.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">⚡</div>
-          <h3>AI Automation</h3>
-          <p>n8n Workflow Automation, Prompt Engineering, API, Webhook, JSON Mapping, Claude Code - VSC Integrations: MCP, Skills, etc.</p>
+          <h3>AI & Automation</h3>
+          <p>n8n & Make Workflow Automation, Hermes AI Agent Training, API Integrations, Webhooks, LLMS Plugin Setup, and Prompt Engineering.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon">📊</div>
           <h3>On-page SEO</h3>
-          <p>On-page SEO Audit, Keyword Research, Meta Elements Recommendations &amp; Implementation, Internal Linking, and similar.</p>
+          <p>On-page SEO Audit, Keyword Research, Meta Elements Recommendations &amp; Implementation, Content Pruning, and Internal Linking strategies.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">🔧</div>
-          <h3>General VA</h3>
-          <p>WordPress Dev, Shopify/WooCommerce Product Listing, GBP Optimization, Social Media Management, Daily Work Assistance.</p>
+          <div class="service-icon">📍</div>
+          <h3>Local SEO</h3>
+          <p>Comprehensive GBP optimization, manual citation building, local search strategy, and targeted blog content to dominate local map packs.</p>
         </div>
       </div>
     </div>
@@ -979,7 +962,6 @@
         <button class="filter-tab active" data-filter="all">All</button>
         <button class="filter-tab" data-filter="n8n">n8n</button>
         <button class="filter-tab" data-filter="websites">Websites</button>
-        <button class="filter-tab" data-filter="seo">SEO</button>
       </div>
 
       <div class="work-grid">
@@ -1271,132 +1253,86 @@
       <p class="section-eyebrow reveal">Expertise</p>
       <h2 class="section-title reveal">Skills &amp; Tools</h2>
       <div class="skills-wrapper reveal">
+        
         <div class="skill-col">
-          <h3>SEO</h3>
+          <h3>SEO & Analytics</h3>
           <ul>
-            <li>Technical SEO Audit & Fixes</li>
-            <li>Structured Data</li>
-            <li>Site Speed & Core Web Vitals</li>
-            <li>Internal Linking Optimization</li>
-            <li>Internal Linking Optimization</li>
-            <li>Fixing Crawl Errors</li>
-            <li>XML Sitemap Creation & Submission</li>
-            <li>Robots.txt Optimization</li>
-            <li>On-page optimization</li>
-            <li>Keyword research</li>
-            <li>Meta implementation</li>
-            <li>GA4 &amp; GSC reporting</li>
+            <li>Technical SEO Audits & Fixes</li>
+            <li>Local SEO & GBP Optimization</li>
+            <li>Content Pruning & Link Building</li>
+            <li>Schema Implementation</li>
+            <li>Pagespeed Improvements</li>
+            <li>Pre & Post Migration Audits</li>
+            <li>GA4 & GSC Analytics</li>
           </ul>
         </div>
+        
         <div class="skill-col">
-          <h3>Technical &amp; Automation</h3>
+          <h3>Automation & Dev</h3>
           <ul>
-            <li>n8n workflow building</li>
-            <li>API integration</li>
-            <li>HTTP &amp; Webhooks</li>
-            <li>JSON Mapping</li>
-            <li>Prompt engineering</li>
+            <li>n8n & Make Workflow Automation</li>
+            <li>Hermes Agent Training</li>
             <li>Google Apps Script</li>
-            <li>Error troubleshooting</li>
+            <li>REST/POST APIs & Webhooks</li>
+            <li>LLMS Plugin Setup</li>
+            <li>LLMS.txt Configuration</li>
+            <li>JSON Mapping</li>
           </ul>
         </div>
+        
         <div class="skill-col">
-          <h3>Admin &amp; Ops</h3>
+          <h3>AI & Web CMS</h3>
           <ul>
-            <li>Project management</li>
-            <li>Meeting coordination</li>
-            <li>SOP creation</li>
-            <li>CRM &amp; data upkeep</li>
-            <li>Social Media Management</li>
-            <li>Virtual Assistance</li>
+            <li>Claude, ChatGPT, Gemini, Codex</li>
+            <li>MidJourney & NotebookLM</li>
+            <li>Prompt Engineering</li>
+            <li>WordPress CMS Management</li>
+            <li>Clickfix Malware Remediation</li>
+            <li>UI/UX Testing & HTML/CSS</li>
+            <li>Shopify & Wix</li>
           </ul>
         </div>
+
       </div>
+
       <div class="tools-platforms reveal">
         <h4>TOOLS &amp; PLATFORMS</h4>
 
-             <div class="tools-category">
+        <div class="tools-category">
+          <span class="tools-cat-label">Automation & Project Management</span>
           <div class="tools-row">
-            <div class="tool-icon" data-tooltip="n8n">n8n</div>
-            <div class="tool-icon" data-tooltip="Make">Make</div>
-            <div class="tool-icon" data-tooltip="Airtable">Air</div>
-            <div class="tool-icon" data-tooltip="Monday.com">Mon</div>
-            <div class="tool-icon" data-tooltip="Teamwork">TmW</div>
+            <span class="tool-chip">n8n</span>
+            <span class="tool-chip">Make</span>
+            <span class="tool-chip">Airtable</span>
+            <span class="tool-chip">Monday.com</span>
+            <span class="tool-chip">Teamwork</span>
+            <span class="tool-chip">GoHighLevel</span>
           </div>
         </div>
 
         <div class="tools-category">
+          <span class="tools-cat-label">AI & Models</span>
           <div class="tools-row">
-            <div class="tool-icon" data-tooltip="ChatGPT">GPT</div>
-            <div class="tool-icon" data-tooltip="Claude">Claude</div>
-            <div class="tool-icon" data-tooltip="Perplexity">Perp</div>
-            <div class="tool-icon" data-tooltip="Google AI Studio">G·AI</div>
-            <div class="tool-icon" data-tooltip="NotebookLM">NbLM</div>
-            <div class="tool-icon" data-tooltip="Midjourney">MJ</div>
-          </div>
-        </div>
-
-         <div class="tools-category">
-          <div class="tools-row">
-            <div class="tool-icon" data-tooltip="Google Analytics 4">GA4</div>
-            <div class="tool-icon" data-tooltip="Google Search Console">GSC</div>
-            <div class="tool-icon" data-tooltip="PageSpeed Insights">PSI</div>
-            <div class="tool-icon" data-tooltip="Looker Studio">LkSt</div>
-            <div class="tool-icon" data-tooltip="Google Workspace">GWS</div>
-            <div class="tool-icon" data-tooltip="Mobile-Friendly Test">MFT</div>
-            <div class="tool-icon" data-tooltip="Schema.org Validator">Schm</div>
+            <span class="tool-chip">ChatGPT</span>
+            <span class="tool-chip">Claude</span>
+            <span class="tool-chip">Perplexity</span>
+            <span class="tool-chip">Google AI Studio</span>
+            <span class="tool-chip">NotebookLM</span>
+            <span class="tool-chip">Midjourney</span>
           </div>
         </div>
 
         <div class="tools-category">
+          <span class="tools-cat-label">SEO, Analytics & Web</span>
           <div class="tools-row">
-            <div class="tool-icon" data-tooltip="WordPress">WP</div>
-            <div class="tool-icon" data-tooltip="Wix">Wix</div>
-            <div class="tool-icon" data-tooltip="Shopify">Shpf</div>
-            <div class="tool-icon" data-tooltip="ClickFunnels">CF</div>
-            <div class="tool-icon" data-tooltip="Sanity Studio">Snty</div>
-            <div class="tool-icon" data-tooltip="WPML Plugin">WPML</div>
-            <div class="tool-icon" data-tooltip="Figma">Fgma</div>
-            <div class="tool-icon" data-tooltip="Namecheap">NChe</div>
-          </div>
-        </div>
-
-        <div class="tools-category">
-          <div class="tools-row">
-            <div class="tool-icon" data-tooltip="Slack">Slck</div>
-            <div class="tool-icon" data-tooltip="Gmail">Gml</div>
-            <div class="tool-icon" data-tooltip="Dropbox">Drpb</div>
-            <div class="tool-icon" data-tooltip="Loom">Loom</div>
-            <div class="tool-icon" data-tooltip="Twilio">Twlo</div>
-            <div class="tool-icon" data-tooltip="Invoicely">Invl</div>
-            <div class="tool-icon" data-tooltip="Keeper Security">Kpr</div>
-            <div class="tool-icon" data-tooltip="LastPass">LsPa</div>
-            <div class="tool-icon" data-tooltip="Lightshot">Lsht</div>
-            <div class="tool-icon" data-tooltip="VPN">VPN</div>
-            <div class="tool-icon" data-tooltip="Time Doctor">TmDr</div>
-          </div>
-        </div>
-
-        <div class="tools-category">
-          <div class="tools-row">
-            <div class="tool-icon" data-tooltip="SEMrush">Sem</div>
-            <div class="tool-icon" data-tooltip="Ahrefs">Ahrf</div>
-            <div class="tool-icon" data-tooltip="Screaming Frog">SF</div>
-            <div class="tool-icon" data-tooltip="BrightLocal">BrLo</div>
-            <div class="tool-icon" data-tooltip="Neuronwriter">Neur</div>
-            <div class="tool-icon" data-tooltip="SEO Pro">SEO+</div>
-            <div class="tool-icon" data-tooltip="SEOQuake">SeoQ</div>
-            <div class="tool-icon" data-tooltip="RankMath">Rank</div>
-            <div class="tool-icon" data-tooltip="Metricool">Mtrc</div>
-            <div class="tool-icon" data-tooltip="Detailed SEO">DSEO</div>
-            <div class="tool-icon" data-tooltip="Keywords.com">Kw</div>
-            <div class="tool-icon" data-tooltip="Clicky">Clky</div>
-            <div class="tool-icon" data-tooltip="CallRail">CRail</div>
-            <div class="tool-icon" data-tooltip="Tag Assistant">TagA</div>
-            <div class="tool-icon" data-tooltip="Uptime Robot">URbt</div>
-            <div class="tool-icon" data-tooltip="W3Techs">W3T</div>
-            <div class="tool-icon" data-tooltip="Sitecheck Sucuri">Scri</div>
-            <div class="tool-icon" data-tooltip="Bing Webmaster Tools">BngW</div>
+            <span class="tool-chip">Google Analytics 4</span>
+            <span class="tool-chip">Google Search Console</span>
+            <span class="tool-chip">Looker Studio</span>
+            <span class="tool-chip">SEMrush</span>
+            <span class="tool-chip">Screaming Frog</span>
+            <span class="tool-chip">BrightLocal</span>
+            <span class="tool-chip">WordPress</span>
+            <span class="tool-chip">Shopify</span>
           </div>
         </div>
 
@@ -1412,26 +1348,26 @@
       <p class="section-eyebrow reveal">What They Say</p>
       <h2 class="section-title reveal">Client &amp; Team Feedback</h2>
       <div class="testimonial-row reveal">
+        
+        <!-- NEW TESTIMONIAL: Rich F. -->
+        <div class="testimonial-card">
+          <div class="quote-mark">&ldquo;</div>
+          <p>"You need to spend more time building AI functions than working on mundane tasks AI can do. You're way more valuable as an AI Power user/builder rather than a bottleneck on production. I know you can adapt fast and do a lot to contribute. Thank you for all your hard work so far, let's grow together!"</p>
+          <div class="testimonial-author">Rich F.<small>Leadership / Tech Team</small></div>
+        </div>
+
         <div class="testimonial-card">
           <div class="quote-mark">&ldquo;</div>
           <p>"I hired Nabel to support a team of ours, he did a great job of communicating and asking questions. He learns quickly and our advice is simple, hire him. You'll be glad you did."</p>
           <div class="testimonial-author">Aaron U.<small>CEO/Director, Eruptible Marketing Ltd</small></div>
         </div>
+
         <div class="testimonial-card">
           <div class="quote-mark">&ldquo;</div>
           <p>"Nabel did a really good job on all the tasks. I really appreciated how he worked. He worked independently, but still asked questions. His work was always excellent. He also thought for himself, so that if he had any ideas, he would come to me, we could discuss and implement them together."</p>
           <div class="testimonial-author">Reto W.<small>Private Client</small></div>
         </div>
-        <div class="testimonial-card">
-          <div class="quote-mark">&ldquo;</div>
-          <p>"Out of the 6 virtual assistants we hired, Nabel was the top performer. He was very professional, has great attention to detail, and completed his assignments on time and with high quality. I highly recommend Nabel for additional virtual assistance jobs."</p>
-          <div class="testimonial-author">Anthony R.<small>Marketing & Strategy Consultant, HLM</small></div>
-        </div>
-        <div class="testimonial-card">
-          <div class="quote-mark">&ldquo;</div>
-          <p>"Nabel is a critical thinker, and is very intelligent, detail-oriented, and quick. He is a very fast learner and we’re sure he would excel at any task, given decent directions. He went above and beyond to make sure we were satisfied."</p>
-          <div class="testimonial-author">Michael T.<small>Content Specialist</small></div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -1475,7 +1411,7 @@
     <div class="container footer-inner">
       <div>© 2026 Nabel Tantao. All rights reserved.</div>
       <div class="footer-right">
-        <span>✉ nabeltantao123g@gmail.com</span>
+        <span>✉ nabeltantao123@gmail.com</span>
         <a href="https://www.linkedin.com/in/engrnabs/" target="_blank" class="footer-link">LinkedIn</a>
         <span>📍 Cagayan de Oro, Philippines</span>
       </div>
@@ -1495,8 +1431,10 @@
 
     // (2) Typing effect
     const roles = [
-      'Technical SEO Specialist',
-      'Automation Specialist',
+      'Tech SEO Specialist',
+      'Automation Developer',
+      'AI Workflow Builder',
+      'Prompt Engineer'
     ];
     const typedEl = document.getElementById('typed');
     let roleIndex = 0, charIndex = 0, deleting = false;

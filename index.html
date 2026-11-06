@@ -684,6 +684,26 @@
       background: var(--accent-soft);
     }
 
+    .tool-chip.more-chip {
+      background: transparent;
+      border: 1px dashed var(--accent);
+      color: var(--accent);
+    }
+    
+    .tool-chip.more-chip:hover {
+      background: transparent;
+      transform: none;
+      cursor: default;
+    }
+
+    .tools-footer-text {
+      margin-top: 28px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: var(--font-mono);
+    }
+
     /* ============================================================
        8. TESTIMONIALS
        ============================================================ */
@@ -961,10 +981,59 @@
       <div class="filter-tabs reveal">
         <button class="filter-tab active" data-filter="all">All</button>
         <button class="filter-tab" data-filter="n8n">n8n</button>
+        <button class="filter-tab" data-filter="tech-fixes">Tech Fixes</button>
         <button class="filter-tab" data-filter="websites">Websites</button>
       </div>
 
       <div class="work-grid">
+
+        <!-- ==============================
+             TECH FIXES CARDS
+             ============================== -->
+        <div class="work-card reveal" data-category="tech-fixes">
+          <div class="work-thumb">
+            <!-- Swap 'tech_fix_1.png' with your actual screenshot name -->
+            <img src="images/tech_fix_1.png" alt="Tech Fix Example 1" />
+          </div>
+          <div class="work-body">
+            <h3>Malware Removal & Site Hardening</h3>
+            <p>Identified and remediated Clickfix malware vulnerabilities, securing the server environment and hardening the site against reinfection to restore search visibility.</p>
+            <div class="work-tags">
+              <span class="work-tag">Tech SEO</span>
+              <span class="work-tag">Security</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-category="tech-fixes">
+          <div class="work-thumb">
+            <!-- Swap 'tech_fix_2.png' with your actual screenshot name -->
+            <img src="images/tech_fix_2.png" alt="Tech Fix Example 2" />
+          </div>
+          <div class="work-body">
+            <h3>Core Web Vitals & Pagespeed Optimization</h3>
+            <p>Resolved severe CLS and LCP issues by restructuring code delivery, optimizing images, and fixing render-blocking scripts, resulting in a 40% speed increase.</p>
+            <div class="work-tags">
+              <span class="work-tag">Pagespeed</span>
+              <span class="work-tag">CWV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card reveal" data-category="tech-fixes">
+          <div class="work-thumb">
+            <!-- Swap 'tech_fix_3.png' with your actual screenshot name -->
+            <img src="images/tech_fix_3.png" alt="Tech Fix Example 3" />
+          </div>
+          <div class="work-body">
+            <h3>Complex Migration & Canonical Fixes</h3>
+            <p>Performed a post-migration audit to resolve widespread 404 errors, improper canonical tags, and broken redirect chains to quickly recover lost organic traffic.</p>
+            <div class="work-tags">
+              <span class="work-tag">Site Audit</span>
+              <span class="work-tag">Migrations</span>
+            </div>
+          </div>
+        </div>
 
         <!-- Card 1 — change title, description, tags to your own -->
         <div class="work-card reveal" data-category="n8n">
@@ -1362,9 +1431,13 @@
             <span class="tool-chip">Namecheap</span>
             <span class="tool-chip">RankMath</span>
             <span class="tool-chip">WPML</span>
+            <span class="tool-chip more-chip">+ Many More...</span>
           </div>
         </div>
 
+        <div class="tools-footer-text">
+          * Showing a curated selection. Over 56 software platforms and tools mastered over 5 years.
+        </div>
       </div>
     </div>
   </section>

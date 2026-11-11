@@ -710,28 +710,55 @@
     .testimonial-row::-webkit-scrollbar { height: 6px; }
     .testimonial-row::-webkit-scrollbar-track { background: var(--card); }
     .testimonial-row::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
-    .testimonial-card {
-      flex: 0 0 340px;
-      background: var(--card);
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 26px;
-      transition: border-color 0.2s;
-    }
-    .testimonial-card:hover { border-color: var(--accent); }
-    .quote-mark { color: var(--accent); font-size: 28px; font-family: var(--font-mono); line-height: 1; margin-bottom: 10px; }
-    .testimonial-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 22px; font-style: italic; }
-    .testimonial-author { font-size: 14px; font-weight: 600; }
-    .testimonial-author small {
-      display: block;
-      color: var(--text-muted);
-      font-size: 12px;
-      margin-top: 2px;
-      font-weight: 400;
-      font-family: var(--font-mono);
-    }
-    .testimonial-link {
+    
+.testimonial-card {
+  flex: 0 0 340px;
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 26px;
+  transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  border-color: var(--accent);
+}
+
+.quote-mark {
+  color: var(--accent);
+  font-size: 28px;
+  font-family: var(--font-mono);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.testimonial-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.testimonial-author small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 400;
+  font-family: var(--font-mono);
+}
+
+.testimonial-link {
   display: inline-block;
+  align-self: flex-start;
   margin-top: 14px;
   color: var(--accent);
   font-family: var(--font-mono);
@@ -744,7 +771,6 @@
   color: var(--accent-hi);
   transform: translateX(3px);
 }
-
     /* ============================================================
        9. BOOKING
        ============================================================ */
